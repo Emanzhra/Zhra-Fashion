@@ -1,6 +1,24 @@
 .main-header{
 	
-	color:red;
+	color:#2f3640;
 	font-style:roman;
+	text-align: center;
+	border: 7px solid ;
+	background:#0097e6;
+	 padding: 10px;
+	 margin:5px;
+
+}
+#menu ul{
+  list-style: none;
+}
+#menu li{
+  display: inline;
+  color:#ff4757;
+}
+.upper-image{
 	
+	border:3px solid;
+	margin:5px;
+
 }
