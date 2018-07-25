@@ -1,21 +1,3 @@
-// Define color variables:
-red = [0, 100, 63];
-orange = [40, 100, 60];
-green = [75, 100, 40];
-blue = [196, 77, 55];
-purple = [280, 50, 60];
-letterColors = [red, orange, green, blue, purple];
-
-// This variable controls the smallest distance at which a mouse will 
-mouseResponseThreshold = 50;
-
-// This variable controls how strongly the dots will try to return to their starting position
-friction = 0.85;
-
-// This variable controls how much the dots will rotate when interacting
-rotationForce = 0.0;
-
-message = "Fashion Home";
-
-drawName(message, letterColors);
-bounceBubbles();
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
