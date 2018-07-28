@@ -6,15 +6,15 @@
 
 .main-header{
 	
-	color:#2f3640;
+	color:#222f3e;
 	font-style:roman;
 	font-family:Times New Roman;
 	text-align: center;
-	border: 7px solid #ff5252;
+	border: 5px solid #ff5252;
 	border-radius: 8px;
 	background:#f7f1e3;
 	 padding: 10px;
-	 margin:5px;
+	 margin:3px;
 
 }
 .menu ul{
@@ -22,7 +22,7 @@
 }
 .menu li{
   display: inline;
-  color:#ff4757;
+  color:#222f3e;
 }
 .upper-image{
 	
@@ -32,12 +32,13 @@
 
 }
 .description{
-	color: #000;
+	color: #222f3e;
     margin-top: -3.3125rem;
     padding: 1.125rem 1.625rem 0;
     font-size: 2.75rem;
     line-height: 1;
     text-align:center;
+    font-family: 'Sofia';font-size: 40px;
 }
 .small-imgs{
 	border-radius: 8px;
