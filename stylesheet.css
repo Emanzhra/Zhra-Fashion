@@ -41,9 +41,9 @@
 }
 .small-imgs{
 	border-radius: 8px;
-	margin:10px;
-    float:left;
-    padding:10px;
+	margin:10px 10px 10px 40px;
+    border:solid #636e72 5px;
+    padding:20px;
 
 }
 ul li{
@@ -52,7 +52,3 @@ ul li{
 	margin:10px;
 }
 
-.top-left{
-	
- float:right;
-}
