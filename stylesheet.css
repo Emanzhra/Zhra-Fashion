@@ -52,3 +52,29 @@ ul li{
 	margin:10px;
 }
 
+.footer{
+	color:white;
+	background-color: black;
+	border: solid #d63031 3px;
+    border-radius: 7px;
+	margin-top: 30px; 
+}
+.footpara {
+	margin-left: 2%;
+	text-decoration: underline;
+	font-weight: bold;
+	font-family: sans-serif;
+	font-size-adjust: 10px;
+}
+.lastpara{
+	margin-left: 2%;
+	text-decoration: none;
+	font-weight: bold;
+	font-family: sans-serif;
+	font-size-adjust: 10px;
+}
+.e-mail{
+	text-decoration: underline;
+	color: #0984e3;
+	font-style: italic;
+}
