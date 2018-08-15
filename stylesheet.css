@@ -2,6 +2,8 @@
 
 *{
 	background:#ecf0f1;
+	box-sizing: border-box;
+
 }
 
 .main-header{
@@ -21,6 +23,7 @@
 }
 .menu ul{
   list-style: none;
+  background-color:#ecf0f1; 
 }
 .menu li{
   display: inline;
@@ -83,4 +86,16 @@ ul li{
 	text-decoration: underline;
 	color: #0984e3;
 	font-style: italic;
+}
+
+.mimg{
+	border-style: solid;
+	border-color:#003368;
+	border-radius: 8px; 
+
+}
+#mtitle{
+	color: #283030;
+	font-family: 'Sofia';font-size: 50px;
+	text-align: center;
 }
