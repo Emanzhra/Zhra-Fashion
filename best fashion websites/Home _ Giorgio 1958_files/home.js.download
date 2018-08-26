@@ -1,0 +1,18 @@
+
+$('.block').on("click", function () {
+    
+    var self = $(this);
+    var u = $(this).attr("url");
+    
+    if(u === "#")return false;
+
+    window.location.href = u;
+
+
+});
+
+$(".block").mouseenter(function () {
+    $(this).find('.tx_divider').addClass('full');
+}).mouseleave(function () {
+    $(this).find('.tx_divider').removeClass('full');
+});

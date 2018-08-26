@@ -1,0 +1,193 @@
+/**
+ * 
+ * PIL
+ */
+(function () {
+    var $opt = {
+        'mobile_width': 770
+    };
+
+    this.Pil = function () {
+    };
+    this.Pil.isMobile = function () {
+        return jQuery(window).outerWidth(true) <= $opt.mobile_width;
+    };
+    this.Pil.haveTouch = function () {
+        return ((navigator.userAgent.match(/iPhone/i))
+                || (navigator.userAgent.match(/iPod/i))
+                || (navigator.userAgent.match(/iPad/i))
+                || (navigator.userAgent.match(/Android/i))
+                || (navigator.userAgent.match(/BlackBerry/i))
+                || (navigator.userAgent.match(/IEMobile/i)));
+    };
+    this.Pil.preloadimg = function (opt) {
+        var $o = {
+            'images': [],
+            'onComplete': null,
+            'onProgress': null
+        };
+        jQuery.extend($o, opt);
+        var $nImg = $o.images.length;
+        var $nLoad = 0;
+        for (var $i = 0; $i < $nImg; $i++) {
+            var img = new Image();
+            jQuery(img).load(function () {
+                $nLoad++;
+                if ($nLoad >= $nImg) {
+                    if (typeof $o.onComplete === "function") {
+                        $o.onComplete();
+                    }
+                }
+                else {
+                    if (typeof $o.onProgress === "function") {
+                        $o.onProgress($nLoad / $nImg);
+                    }
+                }
+            });
+            img.src = $o.images[$i];
+        }
+    };
+    this.Pil.addslashes = function (str) {
+        return (str + '')
+                .replace(/[\\"']/g, '\\$&')
+                .replace(/\u0000/g, '\\0');
+    };
+
+
+    this.Pil.Cookies = function () {
+    };
+
+    this.Pil.Cookies.set = function (name, value) {
+        var argv = arguments;
+        var argc = arguments.length;
+        var expires = (argc > 2) ? argv[2] : Pil.Cookies.expires;
+        var path = (argc > 3) ? argv[3] : Pil.Cookies.path;
+        var domain = (argc > 4) ? argv[4] : Pil.Cookies.domain;
+        var secure = (argc > 5) ? argv[5] : Pil.Cookies.secure;
+        document.cookie = name + "=" + escape(value) +
+                ((expires == null) ? "" : ("; expires=" + expires.toGMTString())) +
+                ((path == null) ? "" : ("; path=" + path)) +
+                ((domain == null) ? "" : ("; domain=" + domain)) +
+                ((secure == true) ? "; secure" : "");
+    };
+
+    this.Pil.Cookies.get = function (name) {
+        var arg = name + "=";
+        var alen = arg.length;
+        var clen = document.cookie.length;
+        var i = 0;
+        var j = 0;
+        while (i < clen) {
+            j = i + alen;
+            if (document.cookie.substring(i, j) == arg)
+                return Pil.Cookies.getCookieVal(j);
+            i = document.cookie.indexOf(" ", i) + 1;
+            if (i == 0)
+                break;
+        }
+        return null;
+    };
+
+    this.Pil.Cookies.clear = function (name) {
+        if (Mage.Cookies.get(name)) {
+            document.cookie = name + "=" +
+                    "; expires=Thu, 01-Jan-70 00:00:01 GMT";
+        }
+    };
+    this.Pil.Cookies.getCookieVal = function (offset) {
+        var endstr = document.cookie.indexOf(";", offset);
+        if (endstr == -1) {
+            endstr = document.cookie.length;
+        }
+        return unescape(document.cookie.substring(offset, endstr));
+    };
+
+    this.Pil.getExtFile = function (val) {
+        try {
+            var part = val.split(".");
+            return part[part.length - 1];
+        }
+        catch (e) {
+            return "noext";
+        }
+    };
+})();
+
+/** MENU MOBILE **/
+(function () {
+
+    function MM() {
+        var $self = this;
+        var $lnk = jQuery('#lnkmenumobile');
+        var $menu = jQuery('#menumobile');
+        var $isMobile = null;
+        var $animating = false;
+
+
+        this.isOpen = function () {
+            return $lnk.hasClass("open");
+        };
+
+        this.open = function () {
+            if ($animating)
+                return;
+            $animating = true;
+            $('.msb').css({
+                'display': 'none'
+            });
+
+            $lnk.addClass('open');
+            $menu.css({'display': 'block'});
+            setTimeout(function () {
+                $menu.addClass("open");
+                $animating = false;
+            }, 20);
+
+        };
+        this.close = function (anim) {
+            if ($animating)
+                return;
+            $animating = true;
+            setTimeout(function () {
+                $('.msb').css({
+                    'display': 'block'
+                });
+            }, 500);
+
+            $lnk.removeClass('open');
+            $menu.removeClass("open");
+            setTimeout(function () {
+                $menu.css({'display': 'none'});
+                $animating = false;
+            }, 450);
+        };
+
+        this.resizewindow = function () {
+            var isMob = Pil.isMobile();
+            if ($isMobile === isMob) {
+                return;
+            }
+            $isMobile = isMob;
+            if (!$isMobile && this.isOpen()) {
+                this.close(false);
+            }
+        };
+
+        $lnk.on("click", function () {
+            if ($self.isOpen())
+                $self.close(true);
+            else
+                $self.open();
+            return false;
+        });
+        jQuery(window).resize(function () {
+            $self.resizewindow();
+        });
+    }
+
+
+    new MM();
+
+})();
+
+

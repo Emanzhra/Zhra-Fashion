@@ -1,0 +1,49 @@
+var _divWrap = '#wrap_view_video';
+
+function  showVideo(u){
+    
+    $(_divWrap).css({
+        'display': 'block'
+    });
+    
+    $(_divWrap).append(u);
+    $(_divWrap).addClass('open');
+
+}
+
+function hideVideo(){
+    $(_divWrap).css({
+        'display': 'none'
+    });
+}
+
+function stop(){
+    //var iframe = document.getElementsByClassName('video_view');
+    $('iframe').attr('src', $('iframe').attr('src'));
+    //iframe.src = iframe.src;
+}
+
+$('.c_video').on("click", function () {
+    
+    
+   if($(_divWrap).hasClass('open')){
+       $(_divWrap).removeClass('open');
+       stop();
+       hideVideo();
+       
+   }
+
+});
+
+
+$('.grid_img').on("click", function () {
+    
+    var self = $(this);
+    var u = $(this).attr("u_video");
+   
+    
+    if(u !== ""){
+        showVideo(u);
+    }
+
+});
