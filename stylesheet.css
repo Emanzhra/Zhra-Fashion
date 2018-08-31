@@ -28,7 +28,9 @@
 .menu li{
   display: inline;
   color:#222f3e;
+ 
 }
+
 .upper-image{
 	
 	border:3px solid #ff5252;
@@ -36,6 +38,7 @@
 	border-radius: 8px;
 
 }
+
 .description{
 	color: #222f3e;
     margin-top: -3.3125rem;
@@ -51,6 +54,9 @@
     border:solid #636e72 5px;
     padding:20px;
 
+}
+.small-imgs:hover{
+	transform: scale(1.1);
 }
 ul li{
 	
