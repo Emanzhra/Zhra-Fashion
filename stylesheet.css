@@ -30,7 +30,14 @@
   color:#222f3e;
  
 }
+#signUp{
+	float: right;
 
+}
+#si-form{
+	text-decoration-color: blue;
+
+}
 .upper-image{
 	
 	border:3px solid #ff5252;
