@@ -55,15 +55,17 @@
     text-align:center;
     font-family: 'Sofia';font-size: 40px;
 }
+
 .small-imgs{
 	border-radius: 8px;
 	margin:10px 10px 10px 40px;
     border:solid #636e72 5px;
     padding:20px;
-
+  
 }
 .small-imgs:hover{
 	transform: scale(1.1);
+
 }
 ul li{
 	
@@ -105,7 +107,9 @@ ul li{
 	border-style: solid;
 	border-color:#003368;
 	border-radius: 8px; 
-
+	max-width: 100%;
+    display:block;
+    height:auto;
 }
 #mtitle{
 	color: #283030;
